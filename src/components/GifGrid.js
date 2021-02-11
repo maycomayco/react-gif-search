@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { GifGridItem } from "./GifGridItem";
 
 export const GifGrid = ({ category }) => {
+
+	const [images, setImages] = useState([]);
+
+	useEffect( () => {
+		getGifs();
+	}, []);
 
 	// esto deberia ser un servicio, iterarlo
 	const getGifs = async() => {
@@ -12,23 +19,30 @@ export const GifGrid = ({ category }) => {
 		const resp = await fetch(url);
 		const { data } = await resp.json(); //obtengo solo la property que necesito
 
-		// esto deberia ser un trannsform, de lo que me devuelve la API original y lo que realmente necesita mi App
+		// esto deberia ser un transform, de lo que me devuelve la API original y lo que realmente necesita mi App
 		const gifs = data.map( img => {
 			return {
 				id: img.id,
 				title: img.title,
-				img: img.images?.downsized_large.url, //con (?) decimos que si vienen images entonces lo utilizamos
+				url: img.images?.downsized_large.url, //con (?) decimos que si vienen images entonces lo utilizamos
 			};
 		});
 
 		console.log(gifs);
+		setImages(gifs);
 	}
-
-	getGifs();
 
 	return(
 		<>
-			<h5>{category}</h5>
+			<h4>{category}</h4>
+			{
+				images.map( img =>
+					<GifGridItem
+						key={img.id}
+						{...img} //paso todos los params que vengan en img, como singulares
+					/>
+				)
+			}
 		</>
 	);
 }
