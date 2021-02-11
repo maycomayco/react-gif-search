@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// acc normalize to project
+import 'normalize.css';
 import './index.css';
 import { GifExpertApp } from "./GifExpertApp";
 

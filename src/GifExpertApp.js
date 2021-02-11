@@ -1,32 +1,29 @@
 import react, { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
 
-	const [categories, setCategories] = useState(['First element', 'Second element', 'Third element']);
-
-	const handleAdd = () => {
-		// agregamos el elemento al final
-		// setCategories( [...categories, 'Fourt element'] );
-		// agregamos el elemento al inicio
-		// setCategories( ['Fourt element', ...categories] );
-		// utilizando un callback, el param que recibe es el estado anterior
-		setCategories( cats => [...cats, 'Fourt element']);
-	}
+	const [categories, setCategories] = useState(['Chavo']);
 
 	return (
 		<>
-			<h2>Gif Expert App</h2>
+			<h2>Search gif App</h2>
+			<AddCategory setCategories={ setCategories } />
 			<hr />
-
-			<button onClick={ handleAdd }>Agregar</button>
-
-			<ol>
-				{
-					categories.map( cat => {
-						return <li key={ cat }>{ cat }</li>
-					})
-				}
-			</ol>
+			<div className="categories-list">
+				<ol>
+					{
+						categories.map( cat => (
+							// <li key={ cat }>{ cat }</li>
+							<GifGrid
+								key={ cat }
+								category={ cat }
+							/>
+						))
+					}
+				</ol>
+			</div>
 		</>
 	);
 }
