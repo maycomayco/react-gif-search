@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 // import { getGifs } from "../services/giphy.service";
 import { GifGridItem } from "./GifGridItem";
+import { Heading, SimpleGrid, Box } from "@chakra-ui/react"
 
 export const GifGrid = ({ category }) => {
 
@@ -10,10 +11,15 @@ export const GifGrid = ({ category }) => {
 
 	return(
 		<>
-			<h4>{category}</h4>
+			<Heading size="sm">{category}</Heading>
 			{/* forma corta un operador ternario sin else */}
 			{ loading && <p>Loading...</p>}
-			<div className='card-grid'>
+			{/* <div className='card-grid'> */}
+			<SimpleGrid
+				columns={2}
+				spacing={5}
+				className="card-grid"
+			>
 				{
 					images.map( img =>
 						<GifGridItem
@@ -22,7 +28,8 @@ export const GifGrid = ({ category }) => {
 						/>
 					)
 				}
-			</div>
+			</SimpleGrid>
+			{/* </div> */}
 		</>
 	);
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Box, Input } from "@chakra-ui/react"
 
 export const AddCategory = ({ setCategories }) => {
 	const [inputValue, setInputValue] = useState('');
@@ -19,14 +20,30 @@ export const AddCategory = ({ setCategories }) => {
 	}
 
 	return(
-		<form onSubmit={e => handleSubmit(e)}>
-			<input
-				type="text"
+		<Box as="form" width="100%" onSubmit={e => handleSubmit(e)}>
+			<Input
+				name="query"
 				value={inputValue}
 				onChange={handleInputValue}
 				placeholder="Search gif"
+				backgroundColor="white"
+				size="sm"
+				color="blackAlpha.900"
+				onClick={e => handleSubmit(e)}
 			/>
-		</form>
+		</Box>
+
+		// <Input
+		// 	// type="text"
+		// 	name="query"
+		// 	value={inputValue}
+		// 	onChange={handleInputValue}
+		// 	placeholder="Search gif"
+		// 	backgroundColor="white"
+		// 	size="sm"
+		// 	color="blackAlpha.900"
+		// 	onClick={e => handleSubmit(e)}
+		// />
 	)
 };
 

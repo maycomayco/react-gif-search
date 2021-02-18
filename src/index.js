@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // acc normalize to project
 import 'normalize.css';
-import './index.css';
+// import './index.css';
 import { GifExpertApp } from "./GifExpertApp";
 import reportWebVitals from './reportWebVitals';
 // 1. import `ChakraProvider` component
