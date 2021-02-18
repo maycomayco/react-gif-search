@@ -16,3 +16,28 @@ input{
 ::placeholder {
   color: #ccc;
 }
+
+.card-grid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card{
+  align-content: center;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid gray;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.card p{
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.card img{
+  max-width: 33vw;
+}
