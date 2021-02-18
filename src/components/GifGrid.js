@@ -11,15 +11,11 @@ export const GifGrid = ({ category }) => {
 
 	return(
 		<>
-			<Heading size="sm">{category}</Heading>
+			<Heading size="sm">You searched for: {category}</Heading>
+			<hr />
 			{/* forma corta un operador ternario sin else */}
 			{ loading && <p>Loading...</p>}
-			{/* <div className='card-grid'> */}
-			<SimpleGrid
-				columns={2}
-				spacing={5}
-				className="card-grid"
-			>
+			<SimpleGrid columns={{sm: 2, lg: 3, xl:4}} spacing={5}>
 				{
 					images.map( img =>
 						<GifGridItem
@@ -29,7 +25,6 @@ export const GifGrid = ({ category }) => {
 					)
 				}
 			</SimpleGrid>
-			{/* </div> */}
 		</>
 	);
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Box, Input } from "@chakra-ui/react"
+import { Box, Input, IconButton, SearchIcon, Stack } from "@chakra-ui/react"
 
 export const AddCategory = ({ setCategories }) => {
 	const [inputValue, setInputValue] = useState('');
@@ -21,29 +21,27 @@ export const AddCategory = ({ setCategories }) => {
 
 	return(
 		<Box as="form" width="100%" onSubmit={e => handleSubmit(e)}>
-			<Input
-				name="query"
-				value={inputValue}
-				onChange={handleInputValue}
-				placeholder="Search gif"
-				backgroundColor="white"
-				size="sm"
-				color="blackAlpha.900"
-				onClick={e => handleSubmit(e)}
-			/>
+			<Stack spacing={0} direction="row">
+				<Input
+					name="query"
+					value={inputValue}
+					onChange={handleInputValue}
+					placeholder="Search gif"
+					backgroundColor="white"
+					size="sm"
+					color="blackAlpha.900"
+					roundedRight={0}
+				/>
+				<IconButton
+					aria-label="Search"
+					icon={<img src="https://icongr.am/clarity/search.svg?size=20&color=#666"/>}
+					roundedLeft={0}
+					size="sm"
+					p={2}
+					onClick={e => handleSubmit(e)}
+				/>
+			</Stack>
 		</Box>
-
-		// <Input
-		// 	// type="text"
-		// 	name="query"
-		// 	value={inputValue}
-		// 	onChange={handleInputValue}
-		// 	placeholder="Search gif"
-		// 	backgroundColor="white"
-		// 	size="sm"
-		// 	color="blackAlpha.900"
-		// 	onClick={e => handleSubmit(e)}
-		// />
 	)
 };
 
