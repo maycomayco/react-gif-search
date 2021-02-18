@@ -4,11 +4,14 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './index.css';
 import { GifExpertApp } from "./GifExpertApp";
-
 import reportWebVitals from './reportWebVitals';
+// 1. import `ChakraProvider` component
+import { ChakraProvider } from "@chakra-ui/react"
 
 ReactDOM.render(
-  <GifExpertApp />,
+  <ChakraProvider>
+    <GifExpertApp />
+  </ChakraProvider>,
   document.getElementById('root')
 );
 

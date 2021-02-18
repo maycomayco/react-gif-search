@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
 import { GifGrid } from "./components/GifGrid";
 
