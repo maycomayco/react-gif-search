@@ -4,7 +4,8 @@ import { GifGrid } from "./components/GifGrid";
 import { Box, Stack, Heading, Container, List } from "@chakra-ui/react"
 
 export const GifExpertApp = () => {
-	const [categories, setCategories] = useState(['Chavo']);
+	const [categories, setCategories] = useState(['']);
+	// const [categories, setCategories] = useState(['Chavo']);
 
 	return (
 		<Box>
@@ -12,7 +13,7 @@ export const GifExpertApp = () => {
 				<Heading size="sm" minW="125px" p="6px 0">Search Gif App</Heading>
 				<AddCategory setCategories={ setCategories } />
 			</Stack>
-			<Box centerContent p={4}>
+			<Box p={4}>
 				{
 					categories.map( cat => (
 						<GifGrid

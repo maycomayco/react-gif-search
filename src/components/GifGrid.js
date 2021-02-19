@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useFetchGifs } from "../hooks/useFetchGifs";
-// import { getGifs } from "../services/giphy.service";
 import { GifGridItem } from "./GifGridItem";
 import { Heading, SimpleGrid, Box, Grid } from "@chakra-ui/react"
 

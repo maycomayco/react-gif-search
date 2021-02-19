@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getGifs } from "../services/giphy.service";
+import { getGifs, getGifsRandom } from "../services/giphy.service";
 
 export const useFetchGifs = (category) => {
 
@@ -9,7 +9,8 @@ export const useFetchGifs = (category) => {
 	});
 
 	useEffect( () => {
-		getGifs(category)
+		// getGifs(category)
+		getGifsRandom()
 			.then(images => setState({
 				data: images,
 				loading: false
