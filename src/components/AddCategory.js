@@ -31,11 +31,13 @@ export const AddCategory = ({ setCategories }) => {
 					size="sm"
 					color="blackAlpha.900"
 					roundedRight={0}
+					roundedLeft="sm"
 				/>
 				<IconButton
 					aria-label="Search"
 					icon={<img src="https://icongr.am/clarity/search.svg?size=20&color=#666"/>}
 					roundedLeft={0}
+					roundedRight="sm"
 					size="sm"
 					p={2}
 					onClick={e => handleSubmit(e)}

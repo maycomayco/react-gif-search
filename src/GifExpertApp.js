@@ -9,7 +9,7 @@ export const GifExpertApp = () => {
 	return (
 		<Box>
 			<Stack direction="row" padding={4} spacing={4} backgroundColor="gray.800" color="white">
-				<Heading size="sm" w="150px" p="6px 0">Search Gif App</Heading>
+				<Heading size="sm" minW="125px" p="6px 0">Search Gif App</Heading>
 				<AddCategory setCategories={ setCategories } />
 			</Stack>
 			<Box centerContent p={4}>
