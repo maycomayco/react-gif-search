@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifGridItem } from "./GifGridItem";
-import { Heading, SimpleGrid, Box, Grid } from "@chakra-ui/react"
+import { Heading, Grid } from "@chakra-ui/react"
 
 export const GifGrid = ({ category }) => {
 
@@ -10,7 +10,7 @@ export const GifGrid = ({ category }) => {
 
 	return(
 		<>
-			<Heading size="sm" pb={3}>You searched for: {category}</Heading>
+			{ category && <Heading size="sm" pb={3}>You searched for: { category }</Heading>}
 			<hr />
 			{/* forma corta un operador ternario sin else */}
 			{ loading && <p>Loading...</p>}

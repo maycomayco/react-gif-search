@@ -9,12 +9,19 @@ export const useFetchGifs = (category) => {
 	});
 
 	useEffect( () => {
-		// getGifs(category)
-		getGifsRandom()
-			.then(images => setState({
-				data: images,
-				loading: false
-			}));
+		if (category) {
+			getGifs(category)
+				.then(images => setState({
+					data: images,
+					loading: false
+				}));
+		} else {
+			getGifsRandom()
+				.then(images => setState({
+					data: images,
+					loading: false
+				}));
+		}
 	}, [category]);
 	// si cambia category se vuelve a disparar el hook
 

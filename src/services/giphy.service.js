@@ -12,7 +12,7 @@ export const getGifs = async(category) => {
 		return {
 			id: img.id,
 			title: img.title,
-			url: img.images?.downsized_large.url, //con (?) decimos que si vienen images entonces lo utilizamos
+			url: img.images?.fixed_height_small.url, //con (?) decimos que si vienen images entonces lo utilizamos
 		};
 	});
 
